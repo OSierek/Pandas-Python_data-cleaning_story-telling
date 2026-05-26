@@ -94,6 +94,73 @@ Here are the highlights of my work from this week:
 
 ---
 
+# Eniac Data Cleaning & Discount Analysis – Bootcamp Weeks 3 & 4
+
+Welcome to the repository for the Eniac Capstone Project! Building upon our initial insights, this intensive two-week project focuses on processing a full year of business database records from the online Apple product and accessory retailer, **Eniac**. 
+
+The primary business objective was to evaluate whether Eniac's aggressive discounting strategy yielded tangible business benefits. To answer this, a heavy emphasis was placed on advanced data parsing, data cleaning, and algorithmic price reconstruction.
+
+## 🛠️ Tech Stack & Environments
+*   **Languages:** Python
+*   **Libraries:** Pandas, NumPy, Matplotlib, Seaborn
+*   **Environments:** JupyterLab, Anaconda
+
+---
+
+## 📚 Core Skills Covered
+
+### 1. Advanced Data Wrangling & Ingestion
+*   **Relational Database Mapping:** Integrating four separate business tables (`products`, `orders`, `orderlines`, `brands`).
+*   **Data Completeness & Integrity:** Validating foreign key constraints and reconstructing missing product codes directly from sales logs (`orderlines`).
+*   **Funnel Segmentation:** Filtering transaction pipelines down to valid, completed orders (21% of total data) while dropping invalid shopping carts and ghost orders.
+
+### 2. Algorithmic Data Cleaning & Anomaly Resolution
+*   **Format Transformation:** Fixing corrupted floating-point strings (e.g., removing duplicate decimal dots caused by regional thousands-separator conflicts).
+*   **Mathematical Price Reconstruction:** Utilizing logarithms and base-10 exponentiation to correct decimal orders of magnitude for corrupted `price` and `promo_price` attributes.
+*   **Statistical Reference Heuristics:** Imputing missing or broken prices using historical minimum and maximum observed unit prices from real sales data.
+
+### 3. Feature Engineering & Category Reconstruction
+*   **NLP-Driven Categorization:** Generating per-type token frequency statistics from raw product descriptions to manually map cryptic category codes.
+*   **Market Share Valuation:** Creating an optimized product-type taxonomy covering 97% of product variants and 99.7% of total sales revenue.
+
+### 4. Exploratory Data Analysis & Strategic Presentation
+*   **Correlation & Statistics:** Calculating actual discount percentages to analyze their relationship with sales volume on a weekly, per-category, and per-product level.
+*   **Executive Presentation:** Translating statistical trends into a high-impact, 5-minute business presentation.
+
+---
+
+## 🚀 Repository Structure & Artifacts
+
+### 🔹 [Data Exploration & Cleaning Notebook](./)
+*   **Focus:** End-to-end preprocessing, data integrity checks, and mathematical price corrections.
+*   **Outputs:** Generates the clean, production-ready core datasets: `products_cl`, `orders_cl`, and `orderlines_cl`.
+
+### 🔹 [Product Categorization Notebook](./)
+*   **Focus:** Word-frequency statistics and taxonomy assignment.
+*   **Outputs:** Bridges missing database schemas using a custom category mapping framework. Includes the final [Type-Mapping CSV](./) and reference [Mapping Spreadsheet](./).
+
+### 🔹 [Business Analysis & Visualization Notebook](./)
+*   **Focus:** Discount effectiveness evaluation and correlation studies.
+*   **Outputs:** Features sales distribution plots, weekly trend charts, and scatter plots mapping weekly sales performance against active discount tiers.
+
+### 🔹 [Additional Exercises](./)
+*   **Focus:** Skill reinforcement.
+*   **Description:** A collection of side-notebooks with practice tasks completed throughout this intensive two-week phase.
+
+---
+
+### 👥 Collaboration Credit
+This project was successfully delivered through a highly collaborative team effort. Special thanks to my talented teammates **Mathias** , **Jagan** and **Zhara** for the great teamwork!
+
+---
+
 ## 📈 Learning Reflection
-This project bridged the gap between writing simple scripts and building resilient data pipelines. Moving from basic filtering to regex-based text cleaning and relational merges allows me to handle real-world, messy datasets with high confidence.
+- 1. This project bridged the gap between writing simple scripts and building resilient data pipelines. Moving from basic filtering to regex-based text cleaning and relational merges allows me to handle real-world, messy datasets with high confidence.
+
+- 2. This intensive project truly highlighted the reality of working as a Data Scientist: real-world data is messy, incomplete and highly corrupted. Moving from clean, curated business datasets to a live business database forced me to think algorithmically and apply advanced engineering strategies. 
+
+Key takeaways from this project include:
+*   **Data Cleaning as a Core Asset:** Writing mathematical correction logic (using log/exponentiation) to fix systematic database corruption proved that data cleaning is not just preparation—it requires creative and analytical problem-solving.
+*   **Business Inferences from Incomplete Schemas:** When metadata was missing (like the product category codes), I learned how to engineer our own ground truth by extracting text statistics from product names to bridge schema gaps.
+*   **Translating Data into Strategy:** Analyzing the direct correlation between aggressive discounts and sales performance taught me how to look past simple volume increases and evaluate true business viability. 
 
